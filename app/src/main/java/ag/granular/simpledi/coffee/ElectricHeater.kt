@@ -1,16 +1,16 @@
 package ag.granular.simpledi.coffee
 
-open class ElectricHeater {
+open class ElectricHeater: Heater {
     private var heating = false
 
-    fun on() {
+    override fun on() {
         System.out.println("~ ~ ~ heating ~ ~ ~")
         heating = true
     }
 
-    fun off() {
+    override fun off() {
         heating = false;
     }
 
-    open fun isHot() = heating
+    override fun isHot() = heating
 }
