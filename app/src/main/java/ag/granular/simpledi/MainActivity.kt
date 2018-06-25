@@ -10,7 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DaggerCoffeeAppComponent.create()
+        DaggerCoffeeAppComponent.builder()
+                .context(this)
+                .build()
                 .maker()
                 .brew()
     }

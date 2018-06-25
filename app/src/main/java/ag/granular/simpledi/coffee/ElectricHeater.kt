@@ -1,10 +1,14 @@
 package ag.granular.simpledi.coffee
 
-open class ElectricHeater: Heater {
+import android.content.Context
+import android.widget.Toast
+import javax.inject.Inject
+
+open class ElectricHeater @Inject constructor(val context: Context): Heater {
     private var heating = false
 
     override fun on() {
-        System.out.println("~ ~ ~ heating ~ ~ ~")
+        Toast.makeText(context, "~ ~ ~ heating ~ ~ ~", Toast.LENGTH_SHORT).show()
         heating = true
     }
 
