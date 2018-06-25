@@ -1,6 +1,8 @@
 package ag.granular.simpledi.coffee
 
-class CoffeeMaker(val heater: Heater, val pump: Pump) {
+import javax.inject.Inject
+
+class CoffeeMaker @Inject constructor(val heater: Heater, val pump: Pump) {
     fun brew() {
         heater.on()
         pump.pump()
